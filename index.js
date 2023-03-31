@@ -148,7 +148,8 @@ async function startHisoka() {
       "green"
     )
   );
-
+  
+  console.log(`QR code will be displayed below this line:`);
   const client = sansekaiConnect({
     logger: pino({ level: "silent" }),
     printQRInTerminal: true,
