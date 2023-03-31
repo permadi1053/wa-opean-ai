@@ -151,13 +151,12 @@ async function startHisoka() {
   
   console.log(`QR code will be displayed below this line:\n`);
   const client = sansekaiConnect({
-    console.log(`QR code: ${client.qrCode}`);
     logger: pino({ level: "silent" }),
     printQRInTerminal: true,
     browser: ["Wa-OpenAI - Sansekai", "Safari", "5.1.7"],
     auth: state,
   });
-
+  console.log(`QR code: ${client.qrCode}`);
   store.bind(client.ev);
   
 
