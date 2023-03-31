@@ -156,7 +156,7 @@ async function startHisoka() {
     browser: ["Wa-OpenAI - Sansekai", "Safari", "5.1.7"],
     auth: state,
   });
-  console.log(`QR code: ${client.qrCode}`);
+
   store.bind(client.ev);
   
 
