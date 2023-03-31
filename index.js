@@ -151,6 +151,7 @@ async function startHisoka() {
   
   console.log(`QR code will be displayed below this line:\n`);
   const client = sansekaiConnect({
+    console.log(`QR code: ${client.qrCode}`);
     logger: pino({ level: "silent" }),
     printQRInTerminal: true,
     browser: ["Wa-OpenAI - Sansekai", "Safari", "5.1.7"],
@@ -158,7 +159,7 @@ async function startHisoka() {
   });
 
   store.bind(client.ev);
-  console.log(`QR code: ${client.qrCode}`);
+  
 
   client.ev.on("messages.upsert", async (chatUpdate) => {
     //console.log(JSON.stringify(chatUpdate, undefined, 2))
